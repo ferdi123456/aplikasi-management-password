@@ -26,27 +26,40 @@ public class UserServiceTest {
     @Autowired
     private UserService user_service;
     
-    @Test
-    public void cariSemuaUser() {
-        User users = user_service.findById("1");
-        if (users != null) {
-            System.out.println("user ketemu");
-        }else{
-            System.out.println("tidak ketemu");
-        }
-    }
-    
-    
-    
-    
 //    @Test
-//    public void cariSemuaUserAndId() {
-//        User users = user_service.findByNameAndId("ferdi1", "123");
+//    public void cariSemuaUserId() {
+//        User users = user_service.findById("1");
 //        if (users != null) {
-//            System.out.println("user ketemu");
-//            System.out.println("user adalah : " + users.getPassword());
+//            System.out.println("ID ketemu");
+//        }else{
+//            System.out.println("ID tidak ketemu");
 //        }
 //    }
+    
+//    @Test
+//    public void cariSemuaUserNama() {
+//        User users = user_service.findByNama("ferdi");
+//        if (users != null) {
+//            System.out.println("user ketemu");
+//        }else{
+//            System.out.println("tidak ketemu");
+//        }
+//    }
+    
+    
+    
+    
+    
+    @Test
+    public void cariSemuaUserNamaAndId() {
+        User users = user_service.findByNamaAndId("ferdi", "1");
+        if (users != null) {
+            System.out.println("NAMA DAN ID DITEMUKAN");
+            System.out.println("USER ADALAH : " + users.getNama());
+        }else{
+            System.out.println("NAMA DAN ID TIDAK DITEMUKAN");
+        }
+    }
     
 //    @Test
 //    public void cariSatuAja() {
@@ -57,9 +70,10 @@ public class UserServiceTest {
 //        }
 //    }
 
-//    @Test
+    @Test
     public void hitungSemuaUser() {
         long count = user_service.count();
+        System.out.println("JUMLAH USER");
         System.out.println("count : " + count);
     }
 
