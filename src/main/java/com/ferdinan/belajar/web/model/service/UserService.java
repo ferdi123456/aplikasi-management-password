@@ -22,11 +22,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserService extends PagingAndSortingRepository<User, String>{
     
-    public User findById(String id);
+
+//    public User findById(String id);//ok
     
-//    public User findByName(String nama);
+//    public User findByNama(String nama);//ok
     
-//    public User findByNameAndId(String name, String id);
+    public User findByNamaAndId(String nama, String id);//OK
     
      
 //    
